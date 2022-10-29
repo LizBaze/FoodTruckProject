@@ -31,10 +31,15 @@ public class FoodTruckApp {
 			case 3:
 				fta.highestRated(trucks);
 				break;
+			case 4:
+
+				break;
+			default:
+				System.out.println("Invalid Selection");
+				break;
 			}
 		}
 
-		System.out.println("Goodbye!");
 		sc.close();
 	}
 
@@ -121,7 +126,8 @@ public class FoodTruckApp {
 				}
 			}
 		}
-		System.out.println("The highest rated truck is: " + bestTruck.getName());
+		System.out.println("The highest rated truck is: ");
+		System.out.println(bestTruck);
 	}
 
 }
