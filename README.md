@@ -1,9 +1,8 @@
 # Food Truck Project
 
 ### Description
-This program allows the user to input information for up to five food trucks including name, genre, and a rating. 
-
-It then shows a menu that gives the user choices of certain information they wish to display.
+This program allows the user to input information for up to five food trucks including name, genre, and a rating.
+Entering information for five trucks or entering 'Quit' when prompted to enter a truck name will then show a menu that gives the user choices of certain information they wish to display.
 
 This was completed during week two of Skill Distillery's Full-Stack Java Development Bootcamp.
 

@@ -15,8 +15,7 @@ public class FoodTruck {
 		truckIDGenerator++;
 	}
 	
-	public FoodTruck() {
-		
+	public FoodTruck() {   // Only for use in highestRated()
 	}
 
 	public String toString() {
@@ -55,7 +54,4 @@ public class FoodTruck {
 	public void setTruckID(int truckID) {
 		this.truckID = truckID;
 	}
-	
-	
-
 }
