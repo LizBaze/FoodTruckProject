@@ -107,10 +107,8 @@ public class FoodTruckApp {
 		int numTrucks = 0;
 		double average = 0;
 		for (FoodTruck foodTruck : trucks) {
-			if (foodTruck != null) {
-				average += foodTruck.getRating();
-				numTrucks++;
-			}
+			average += foodTruck.getRating();
+			numTrucks++;
 		}
 		average /= numTrucks;
 		System.out.println("The average rating of all trucks is: " + average);
