@@ -7,29 +7,32 @@ import com.skilldistillery.foodtruck.entities.FoodTruck;
 public class FoodTruckApp {
 
 	public static void main(String[] args) {
-
+		FoodTruckApp app = new FoodTruckApp();
+		app.run();
+	}
+	
+	public void run() {
 		Scanner sc = new Scanner(System.in);
-		FoodTruckApp fta = new FoodTruckApp();
-
+		
 		FoodTruck[] trucks = new FoodTruck[5];
-
-		trucks = fta.infoEntry(sc);
-
+		
+		trucks = infoEntry(sc);
+		
 		int userChoice = 0;
-
+		
 		while (userChoice != 4) {
-			fta.menu();
+			menu();
 			userChoice = sc.nextInt();
 			sc.nextLine();
 			switch (userChoice) {
 			case 1:
-				fta.listTrucks(trucks);
+				listTrucks(trucks);
 				break;
 			case 2:
-				fta.averageRating(trucks);
+				averageRating(trucks);
 				break;
 			case 3:
-				fta.highestRated(trucks);
+				highestRated(trucks);
 				break;
 			case 4:
 				System.out.println("Goodbye!");
@@ -48,7 +51,7 @@ public class FoodTruckApp {
 		boolean quit = false;
 		int numTrucks = 0;
 
-		while (!quit && numTrucks < 5) {
+		while ( ! quit && numTrucks < 5) {
 			String truckName;
 			System.out.println("Enter a food truck name or type 'Quit' to stop: ");
 			String name = scanner.nextLine();
@@ -86,13 +89,12 @@ public class FoodTruckApp {
 	}
 
 	public void menu() {
-		FoodTruckApp fta = new FoodTruckApp();
-		fta.printStars();
+		printStars();
 		System.out.println("*** 1. Show all food trucks     ***");
 		System.out.println("*** 2. Show average rating      ***");
 		System.out.println("*** 3. Show highest rated truck ***");
 		System.out.println("*** 4. Quit                     ***");
-		fta.printStars();
+		printStars();
 	}
 
 	public void listTrucks(FoodTruck[] trucks) {
@@ -107,8 +109,10 @@ public class FoodTruckApp {
 		int numTrucks = 0;
 		double average = 0;
 		for (FoodTruck foodTruck : trucks) {
-			average += foodTruck.getRating();
-			numTrucks++;
+			if (foodTruck != null) {
+				average += foodTruck.getRating();
+				numTrucks++;
+			}
 		}
 		average /= numTrucks;
 		System.out.println("The average rating of all trucks is: " + average);
